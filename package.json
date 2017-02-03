@@ -1,0 +1,61 @@
+{
+  "name": "logux-status",
+  "version": "0.1.0",
+  "description": "Display Logux synchronization status in browser",
+  "keywords": [
+    "logux",
+    "client"
+  ],
+  "author": "Andrey Sitnik <andrey@sitnik.ru>",
+  "license": "MIT",
+  "repository": "logux/logux-status",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "docdash": "^0.4.0",
+    "eslint": "^3.14.1",
+    "eslint-config-logux": "^4.0.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-es5": "^1.0.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "jest": "^18.1.0",
+    "jsdoc": "^3.4.3",
+    "json-loader": "^0.5.4",
+    "lint-staged": "^3.3.0",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^2.5.4",
+    "webpack": "^2.2.1",
+    "webpack-bundle-analyzer": "^2.2.1",
+    "yaspeller": "^3.0.0"
+  },
+  "scripts": {
+    "lint-staged": "lint-staged",
+    "spellcheck": "yarn run cleandocs && yaspeller *.md docs/*.html",
+    "cleandocs": "yarn run docs && rimraf docs/*.js.html",
+    "clean": "rimraf docs/ coverage/ bundle-report.html",
+    "lint": "eslint *.js test/*.js",
+    "docs": "jsdoc --configure .jsdocrc *.js",
+    "test": "jest --coverage && yarn run lint && yarn run spellcheck",
+    "prebundle": "webpack index.js bundle/index.js",
+    "bundle": "gzip -9 -f bundle/index.js",
+    "postbundle": "ls -lh bundle/*.gz | awk '{print \"Size:\", $5\"B\"}'"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "statements": 100
+      }
+    }
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-logux"
+  },
+  "lint-staged": {
+    "*.md": "yaspeller",
+    "*.js": "eslint"
+  },
+  "pre-commit": [
+    "lint-staged"
+  ]
+}
