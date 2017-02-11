@@ -1,5 +1,6 @@
+var attention = require('../attention')
 var index = require('../')
 
-it('is empty', function () {
-  expect(index).toEqual({ })
+it('has attention function', function () {
+  expect(index.attention).toBe(attention)
 })
