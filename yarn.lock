@@ -2376,6 +2376,19 @@ log-update@^1.0.2:
     ansi-escapes "^1.0.0"
     cli-cursor "^1.0.2"
 
+logux-core@logux/logux-core:
+  version "0.1.0"
+  resolved "https://codeload.github.com/logux/logux-core/tar.gz/89a96c9488f832925bd5cea97762e224f6ecd318"
+  dependencies:
+    nanoevents "^0.3.0"
+
+logux-sync@logux/logux-sync:
+  version "0.1.2"
+  resolved "https://codeload.github.com/logux/logux-sync/tar.gz/c71b5736e4e9e0f2dedfe042b61a82c40f88fa69"
+  dependencies:
+    nanoevents "^0.3.0"
+    object-assign "^4.1.1"
+
 longest@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/longest/-/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
@@ -2515,6 +2528,10 @@ nan@^2.3.0:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.5.1.tgz#d5b01691253326a97a2bbee9e61c55d8d60351e2"
 
+nanoevents@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/nanoevents/-/nanoevents-0.3.0.tgz#4d7ed1e38510e19bd79b99ffc4a2e5f91f33a411"
+
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
@@ -2647,7 +2664,7 @@ oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
 
-object-assign@^4.0.1, object-assign@^4.1.0:
+object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
