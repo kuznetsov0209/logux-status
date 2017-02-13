@@ -7,6 +7,7 @@
     "JSDoc",
     "js",
     "BaseSync",
-    "Syncable"
+    "Syncable",
+    "UX"
   ]
 }
