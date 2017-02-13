@@ -5,6 +5,8 @@
     "Logux",
     "docdash",
     "JSDoc",
-    "js"
+    "js",
+    "BaseSync",
+    "Syncable"
   ]
 }
