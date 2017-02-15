@@ -1,9 +1,11 @@
 var attention = require('./attention')
 var confirm = require('./confirm')
+var log = require('./log')
 
 module.exports = {
   attention: attention,
-  confirm: confirm
+  confirm: confirm,
+  log: log
 }
 
 /**
