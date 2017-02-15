@@ -10,14 +10,19 @@ var Client = require('logux-client/client')
 var client = new Client({ … })
 
 var attention = require('logux-status/attention')
+var confirm = require('logux-status/confirm')
+var log = require('logux-status/log')
+
 attention(client)
 confirm(client, i18n.t('loguxWarn'))
+log(client)
 ```
 
 <a href="https://evilmartians.com/?utm_source=logux-status">
   <img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg"
        alt="Sponsored by Evil Martians" width="236" height="54">
 </a>
+
 
 ## `attention`
 
@@ -46,6 +51,7 @@ function disableLogux() {
 }
 ```
 
+
 ## `confirm`
 
 Show confirm popup, when user close tab with non-synchronized actions.
@@ -68,6 +74,28 @@ It return a function to disable itself.
 
 ```js
 var unbind = confirm(client)
+function disableLogux() {
+  unbind()
+}
+```
+
+
+## `log`
+
+Display Logux events in browser console.
+
+```js
+var log = require('logux-status/log')
+log(client)
+```
+
+This feature will be useful for application developer to understand
+Logux life cycle and debug errors.
+
+It return a function to disable itself.
+
+```js
+var unbind = log(client)
 function disableLogux() {
   unbind()
 }
