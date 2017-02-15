@@ -44,3 +44,27 @@ function disableLogux() {
   unbind()
 }
 ```
+
+## `confirm`
+
+Confirm close tab if there are unsynchronized actions to notify user.
+
+```js
+var confirm = require('logux-status/confirm')
+
+var warning = 'Edits were not synchronize, do not leave the page.'
+confirm(client, warning)
+```
+User could close current tab in the middle of synchronization process.
+So good UX must notify user and request confirmation to close the tab.
+
+Use optional parameter `warning`  to specify a text of warning.
+
+It return a function to disable itself.
+
+```js
+var unbind = confirm(client, 'Edits were not synchronize, do not leave the page.')
+function disableLogux() {
+  unbind()
+}
+```
