@@ -8,6 +8,7 @@
     "js",
     "BaseSync",
     "Syncable",
-    "UX"
+    "UX",
+    "unsynchronized"
   ]
 }
