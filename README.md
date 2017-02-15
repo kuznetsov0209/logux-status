@@ -11,6 +11,7 @@ var client = new Client({ … })
 
 var attention = require('logux-status/attention')
 attention(client)
+confirm(client, i18n.t('loguxWarn'))
 ```
 
 <a href="https://evilmartians.com/?utm_source=logux-status">
@@ -47,23 +48,26 @@ function disableLogux() {
 
 ## `confirm`
 
-Confirm close tab if there are unsynchronized actions to notify user.
+Show confirm popup, when user close tab with non-synchronized actions.
 
 ```js
 var confirm = require('logux-status/confirm')
-
-var warning = 'Edits were not synchronize, do not leave the page.'
-confirm(client, warning)
+confirm(client)
 ```
-User could close current tab in the middle of synchronization process.
+
+User could close app tab in offline or in the middle of synchronization process.
 So good UX must notify user and request confirmation to close the tab.
 
-Use optional parameter `warning`  to specify a text of warning.
+Use optional second argument to specify a text of warning.
+
+```js
+confirm(client, 'Post does not saved to server. Are you sure to leave?')
+```
 
 It return a function to disable itself.
 
 ```js
-var unbind = confirm(client, 'Edits were not synchronize, do not leave the page.')
+var unbind = confirm(client)
 function disableLogux() {
   unbind()
 }
