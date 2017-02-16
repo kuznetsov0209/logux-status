@@ -93,7 +93,7 @@ This feature will be useful for application developer to understand
 Logux life cycle and debug errors.
 
 In second argument you can disable some message types.
-Possible types are: `connect`, `state`, `error`, `add`, `clean`.
+Possible types are: `state`, `error`, `add`, `clean`.
 
 ```js
 log(client, { add: false })
