@@ -12,10 +12,16 @@ var client = new Client({ … })
 var attention = require('logux-status/attention')
 var confirm = require('logux-status/confirm')
 var log = require('logux-status/log')
+var favicon = require('logux-status/favicon')
 
 attention(client)
 confirm(client, i18n.t('loguxWarn'))
 log(client)
+favicon(client, {
+  online: '/favicon.ico',
+  offline: '/offline.ico',
+  error: '/error.ico'
+})
 ```
 
 <a href="https://evilmartians.com/?utm_source=logux-status">
@@ -103,6 +109,45 @@ It return a function to disable itself.
 
 ```js
 var unbind = log(client)
+function disableLogux() {
+  unbind()
+}
+```
+
+
+## `favicon`
+
+Change favicon on synchronization status and error to notify user.
+
+```js
+var favicon = require('logux-status/favicon')
+favicon(client, {
+  online: '/favicon.ico',
+  offline: '/offline.ico',
+  error: '/error.ico'
+})
+```
+
+User expect correct synchronization until we told about an error. So good UX must notify user and show synchronization state on tab icon.
+
+Use second argument to specify favicon links.
+
+```js
+favicon(client, {
+  online: '/your_online_link.ico',
+  offline: '/your_offline_link.ico',
+  error: '/your_error_link.ico'
+})
+```
+
+It return a function to disable itself.
+
+```js
+var unbind = favicon(client, {
+ online: '/favicon.ico',
+ offline: '/offline.ico',
+ error: '/error.ico'
+})
 function disableLogux() {
   unbind()
 }

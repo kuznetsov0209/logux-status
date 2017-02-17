@@ -1,6 +1,7 @@
 var attention = require('../attention')
 var confirm = require('../confirm')
 var log = require('../log')
+var favicon = require('../favicon')
 var index = require('../')
 
 it('has attention function', function () {
@@ -13,4 +14,8 @@ it('has confirm function', function () {
 
 it('has log function', function () {
   expect(index.log).toBe(log)
+})
+
+it('has favicon function', function () {
+  expect(index.favicon).toBe(favicon)
 })
