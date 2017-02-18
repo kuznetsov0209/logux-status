@@ -18,7 +18,7 @@ attention(client)
 confirm(client, i18n.t('loguxWarn'))
 log(client)
 favicon(client, {
-  default: '/favicon.ico',
+  normal: '/favicon.ico',
   offline: '/offline.ico',
   error: '/error.ico'
 })
@@ -122,7 +122,7 @@ Change favicon on synchronization status and error to notify user.
 ```js
 var favicon = require('logux-status/favicon')
 favicon(client, {
-  default: '/favicon.ico',
+  normal: '/favicon.ico',
   offline: '/offline.ico',
   error: '/error.ico'
 })
@@ -136,7 +136,7 @@ Use second argument to specify favicon links.
 
 ```js
 favicon(client, {
-  default: '/your_default_link.ico',
+  normal: '/your_default_link.ico',
   offline: '/your_offline_link.ico',
   error: '/your_error_link.ico'
 })
@@ -146,7 +146,7 @@ It return a function to disable itself.
 
 ```js
 var unbind = favicon(client, {
- default: '/favicon.ico',
+ normal: '/favicon.ico',
  offline: '/offline.ico',
  error: '/error.ico'
 })
