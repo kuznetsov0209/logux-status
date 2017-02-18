@@ -12,10 +12,16 @@ var client = new Client({ … })
 var attention = require('logux-status/attention')
 var confirm = require('logux-status/confirm')
 var log = require('logux-status/log')
+var favicon = require('logux-status/favicon')
 
 attention(client)
 confirm(client, i18n.t('loguxWarn'))
 log(client)
+favicon(client, {
+  normal: '/favicon.ico',
+  offline: '/offline.ico',
+  error: '/error.ico'
+})
 ```
 
 <a href="https://evilmartians.com/?utm_source=logux-status">
@@ -107,3 +113,48 @@ function disableLogux() {
   unbind()
 }
 ```
+
+
+## `favicon`
+
+Change favicon on synchronization status and error to notify user.
+
+```js
+var favicon = require('logux-status/favicon')
+favicon(client, {
+  normal: '/favicon.ico',
+  offline: '/offline.ico',
+  error: '/error.ico'
+})
+```
+
+User should always be sure, that she/he have latest updates. 
+If pages goes offline, we must notify user, that data could be outdated. 
+By using favicon we could notify user even if she/he is in other tab.
+
+Use second argument to specify favicon links.
+
+```js
+favicon(client, {
+  normal: '/your_default_link.ico',
+  offline: '/your_offline_link.ico',
+  error: '/your_error_link.ico'
+})
+```
+
+It return a function to disable itself.
+
+```js
+var unbind = favicon(client, {
+ normal: '/favicon.ico',
+ offline: '/offline.ico',
+ error: '/error.ico'
+})
+function disableLogux() {
+  unbind()
+}
+```
+
+Recommendation for creating a favicon:
+- For offline you could make a black-and-white version and make it a little lighter. 
+- For error you could put a red dot to favicon.
