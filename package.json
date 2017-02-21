@@ -9,9 +9,10 @@
   "author": "Andrey Sitnik <andrey@sitnik.ru>",
   "license": "MIT",
   "repository": "logux/logux-status",
-  "dependencies": {},
+  "dependencies": {
+    "browser-supports-log-styles": "^1.1.5"
+  },
   "devDependencies": {
-    "browser-supports-log-styles": "^1.1.5",
     "docdash": "^0.4.0",
     "eslint": "^3.16.0",
     "eslint-config-logux": "^6.0.0",
