@@ -73,7 +73,7 @@ So good UX must notify user and request confirmation to close the tab.
 Use optional second argument to specify a text of warning.
 
 ```js
-confirm(client, 'Post does not saved to server. Are you sure to leave?')
+confirm(client, 'Post was not saved to server. Are you sure to leave?')
 ```
 
 It returns a function to disable itself.
