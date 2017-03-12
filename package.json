@@ -21,16 +21,20 @@
     "eslint-plugin-jest": "^19.0.0",
     "eslint-plugin-promise": "^3.4.2",
     "eslint-plugin-standard": "^2.0.1",
+    "html-webpack-plugin": "^2.28.0",
     "jest": "^19.0.0",
     "jsdoc": "^3.4.3",
     "json-loader": "^0.5.4",
     "lint-staged": "^3.3.1",
+    "logux-client": "logux/logux-client",
     "logux-core": "logux/logux-core",
     "logux-sync": "logux/logux-sync",
     "pre-commit": "^1.2.2",
     "rimraf": "^2.6.0",
+    "url-loader": "^0.5.8",
     "webpack": "^2.2.1",
     "webpack-bundle-analyzer": "^2.3.0",
+    "webpack-dev-server": "^2.4.1",
     "yaspeller": "^3.0.0"
   },
   "scripts": {
@@ -43,7 +47,9 @@
     "test": "jest --coverage && yarn run lint && yarn run spellcheck",
     "prebundle": "webpack index.js bundle/index.js",
     "bundle": "gzip -9 -f bundle/index.js",
-    "postbundle": "ls -lh bundle/*.gz | awk '{print \"Size:\", $5\"B\"}'"
+    "postbundle": "ls -lh bundle/*.gz | awk '{print \"Size:\", $5\"B\"}'",
+    "demo": "webpack-dev-server --content-base ./build --config demo/webpack.config",
+    "demo-build": "node demo/build.js"
   },
   "jest": {
     "coverageThreshold": {
