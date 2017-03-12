@@ -15,6 +15,8 @@ var faviconNormal = require('./favicon/normal.png')
 var faviconOffline = require('./favicon/offline.png')
 var faviconError = require('./favicon/error.png')
 
+var logo = require('./logo.svg')
+
 // Create LocalPair instance
 // to emulate connection
 var pair = new LocalPair()
@@ -49,6 +51,8 @@ favicon(client, {
   offline: faviconOffline,
   error: faviconError
 })
+
+document.getElementById('logo').src = logo
 
 // Toggle connection
 document.getElementById('toggle-connection').onchange = function (e) {
