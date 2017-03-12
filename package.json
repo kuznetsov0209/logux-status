@@ -48,8 +48,8 @@
     "prebundle": "webpack index.js bundle/index.js",
     "bundle": "gzip -9 -f bundle/index.js",
     "postbundle": "ls -lh bundle/*.gz | awk '{print \"Size:\", $5\"B\"}'",
-    "demo": "webpack-dev-server --content-base ./build --config demo/webpack.config",
-    "demo-build": "node demo/build.js"
+    "demo": "webpack-dev-server --content-base ./build --config test/integration/webpack.config",
+    "demo-build": "node test/integration/build.js"
   },
   "jest": {
     "coverageThreshold": {
